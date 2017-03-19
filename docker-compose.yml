@@ -1,0 +1,11 @@
+version: '3'
+services:
+  flask:
+    build:
+      context: .
+      dockerfile: ./docker/flask/Dockerfile
+    image: flask
+    volumes:
+      - ./source/python:/python
+    ports:
+      - 5001:5000
