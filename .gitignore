@@ -1,3 +1,5 @@
 .idea
 *.pyc
 .ipynb_checkpoints
+node_modules
+npm-debug.log

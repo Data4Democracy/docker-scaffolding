@@ -35,3 +35,13 @@ services:
       - postgres
       - mongo
     env_file: docker.env
+  node:
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
+    image: node
+    volumes:
+      - ./source/node/src/:/node/src
+      - ./source/node/package.json:/node/package.json
+    ports:
+      - 5003:5003

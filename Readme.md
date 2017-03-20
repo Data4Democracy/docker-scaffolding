@@ -7,7 +7,7 @@ Docker is a technology that allows you to package up all of the dependencies for
 project in a portable way. It's like virtual environments, but extending to the whole
 OS, not just Python packages.
 
-This template sets up a Flask webapp server, a Conda environment running Jupyter,
+This template sets up a Node webapp server, Flask webapp server, a Conda environment running Jupyter,
 and Postgres and MongoDB databases that they can talk to. For a project that only
 uses some of these, you can delete the unused parts from `docker-compose.yml` and
 remove the files.
