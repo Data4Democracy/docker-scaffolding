@@ -1,5 +1,8 @@
 version: '3'
 services:
+  postgres:
+    build: docker/postgres
+    image: postgres
   flask:
     build:
       context: .
@@ -9,6 +12,9 @@ services:
       - ./source/python:/python
     ports:
       - 5001:5001
+    depends_on:
+      - postgres
+    env_file: docker.env
   conda:
     build:
       context: .
@@ -19,3 +25,6 @@ services:
       - ./source/notebooks:/opt/notebooks
     ports:
       - 5002:5002
+    depends_on:
+      - postgres
+    env_file: docker.env
