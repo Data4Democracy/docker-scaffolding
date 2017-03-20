@@ -1,15 +1,16 @@
 # Template Project
 
-This is a project template that creates a docker environment with useful containers
+This is a project template that creates a Docker environment with useful containers
 for the Data For Democracy project.
 
 Docker is a technology that allows you to package up all of the dependencies for a
 project in a portable way. It's like virtual environments, but extending to the whole
 OS, not just Python packages.
 
-This template creates a dummy postgres database, a Flask server, and a Conda
-environment running jupyter. These are just samples, so feel free to change
-things in your template.
+This template sets up a Flask webapp server, a Conda environment running Jupyter,
+and Postgres and MongoDB databases that they can talk to. For a project that only
+uses some of these, you can delete the unused parts from `docker-compose.yml` and
+remove the files.
 
 To get started:
 
