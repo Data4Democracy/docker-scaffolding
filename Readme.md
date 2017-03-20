@@ -8,9 +8,9 @@ project in a portable way. It's like virtual environments, but extending to the 
 OS, not just Python packages.
 
 This template sets up a Node webapp server, Flask webapp server, a Conda environment running Jupyter,
-and Postgres and MongoDB databases that they can talk to. For a project that only
-uses some of these, you can delete the unused parts from `docker-compose.yml` and
-remove the files.
+and Postgres and MongoDB databases that they can talk to. The idea is that you'll delete the pieces
+that you don't intend to use (remove them from `docker-compose.yml` and delete the directories), and
+customize the ones you do.
 
 To get started:
 
@@ -28,6 +28,8 @@ conda_1     |     to login with a token:
 conda_1     |         http://localhost:5002/?token=9c010637753fdf9646eb75a3d6b36b0a5e5464e5b5d32df3
 
 flask_1     |  * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
+
+node_1      | Running on http://localhost:5003
 ```
 
 4. To stop all of the running services, use CTRL+C.
@@ -36,5 +38,5 @@ flask_1     |  * Running on http://0.0.0.0:5001/ (Press CTRL+C to quit)
 
 6. Code put in source/python will be available to both Conda and the Flask server
 
-7. If you add something to `requirements.txt` use `docker-compose up --build` to
+7. If you add something to `requirements.txt` or `packages.json` use `docker-compose up --build` to
 pick up the new dependencies
