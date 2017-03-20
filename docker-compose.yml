@@ -3,6 +3,9 @@ services:
   postgres:
     build: docker/postgres
     image: postgres
+  mongo:
+    build: docker/mongo
+    image: mongo
   flask:
     build:
       context: .
@@ -10,10 +13,13 @@ services:
     image: flask
     volumes:
       - ./source/python:/python
+      - ./source/web/static:/python/d4d/static
+      - ./source/web/templates:/python/d4d/templates
     ports:
       - 5001:5001
     depends_on:
       - postgres
+      - mongo
     env_file: docker.env
   conda:
     build:
@@ -27,4 +33,5 @@ services:
       - 5002:5002
     depends_on:
       - postgres
+      - mongo
     env_file: docker.env

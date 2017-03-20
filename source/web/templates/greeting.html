@@ -1,0 +1,14 @@
+<!doctype html>
+<title>Aloha!</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=page>
+  <h1>Ahoy</h1>
+  {% for greet in greetz %}
+    <div>{{ greet['salutation'] }}: {{ greet['instances']}}
+      {% if greet.get('_id') %}
+      from Mongo
+      {% else %}
+      from Postgres
+      {% endif %}</div>
+  {% endfor %}
+</div>
