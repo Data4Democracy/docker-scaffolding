@@ -15,7 +15,10 @@ customize the ones you do.
 To get started:
 
 1. Install Docker: https://www.docker.com/products/overview
-
+ * If using windows:
+ * Get the docker toolbox for windows 10 home or earlier: https://docs.docker.com/toolbox/toolbox_install_windows/
+ * Make sure virtualization is enabled (enter BIOS menu, adjust as needed)
+ * Create a docker machine. For windows 10 home and earlier use `docker-machine create --driver virtualbox MACHINENAME`. Use other drivers as necessary (https://docs.docker.com/engine/getstarted-voting-app/node-setup/)
 2. In this directory, run `docker-compose up`
    This will take a while the first time you do it, because it's downloading
    all of the dependencies for all of the subparts of the project. It should
