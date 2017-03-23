@@ -4,7 +4,7 @@ This is a project template that creates a Docker environment with useful contain
 for the Data For Democracy project.
 
 Docker is a technology that allows you to package up all of the dependencies for a
-project in a portable way. It's like virtual environments, but extending to the whole
+project in a portable way. Docker uses "containers", which are like virtual environments, but extending to the whole
 OS, not just Python packages.
 
 This template sets up a Node webapp server, Flask webapp server, a Conda environment running Jupyter,
@@ -15,12 +15,32 @@ customize the ones you do.
 To get started:
 
 1. Install Docker: https://www.docker.com/products/overview
- * If using windows:
- * Get the docker toolbox for windows 10 home or earlier: https://docs.docker.com/toolbox/toolbox_install_windows/
- * Make sure virtualization is enabled (enter BIOS menu, adjust as needed)
- * Create a docker machine. For windows 10 home and earlier use `docker-machine create --driver virtualbox MACHINENAME`. Use other drivers as necessary (https://docs.docker.com/engine/getstarted-voting-app/node-setup/)
- * Setup the machine's environment variables: `docker-machine env MACHINENAME`
- * Finally, activate the machine. The last statement should tell you how but in powershell: `docker-machine env MACHINENAME | invoke-expression`
+
+   If possible, use the native docker setup for your platform:
+   * [Docker for Windows](https://docs.docker.com/docker-for-windows/)
+   * [Docker for Mac](https://docs.docker.com/docker-for-mac/)
+   * Linux supports docker without virtual machines
+
+   If you need to use an earlier version...
+
+   On Windows:
+   * Get the docker toolbox for windows 10 home or earlier: https://docs.docker.com/toolbox/toolbox_install_windows/
+   * Make sure virtualization is enabled (enter BIOS menu, adjust as needed)
+   * Create a docker machine. A good name for the machine is the name of the
+   github repo you'll be using it with, eg. "internal-displacement". For windows 10 home and earlier use
+    `docker-machine create --driver virtualbox MACHINENAME`
+   Use other drivers as necessary (https://docs.docker.com/engine/getstarted-voting-app/node-setup/)
+   * Setup the machine's environment variables: `docker-machine env MACHINENAME`
+   * Finally, activate the machine. The last statement should tell you how but in powershell: `docker-machine env MACHINENAME | invoke-expression`
+
+   On MacOS
+   * Install VirtualBox: https://www.virtualbox.org/
+   * Create a docker machine. A good name for the machine is the name of the
+   github repo you'll be using it with, eg. "internal-displacement".
+   `docker-machine create MACHINENAME`
+   * Set up your environment so that the `docker` commands can access this docker machine:
+   `docker-machine env MACHINENAME`
+
 2. In this directory, run `docker-compose up`
    This will take a while the first time you do it, because it's downloading
    all of the dependencies for all of the subparts of the project. It should
