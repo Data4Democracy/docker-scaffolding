@@ -45,3 +45,6 @@ services:
       - ./source/node/package.json:/node/package.json
     ports:
       - 5003:5003
+    depends_on:
+      - postgres
+    env_file: docker.env
