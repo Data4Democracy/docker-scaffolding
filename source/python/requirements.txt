@@ -1,4 +1,4 @@
-Flask
-records
-psycopg2
-pymongo
+Flask==1.0.2
+records==0.5.2
+psycopg2-binary==2.7.4
+pymongo==3.6.1
